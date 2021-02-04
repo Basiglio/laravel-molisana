@@ -142,7 +142,12 @@ Route::get('/', function () {
   $corte = [];
   $cortissime = [];
 
-  foreach ($data as $element) {
+  foreach ($data as $key => $element) {
+
+    // SALVA L'INDICE ORIGINALE COME NUOVO ATTRIBUTO
+    $element['id'] = $key;
+    // SALVA L'INDICE ORIGINALE COME NUOVO ATTRIBUTO
+
     if ($element["tipo"] == "lunga") {
       $lunghe[] = $element;
     } else if ($element["tipo"] == "corta") {
@@ -156,7 +161,19 @@ Route::get('/', function () {
     "lunghe" => $lunghe,
     "corte" => $corte,
     "cortissime" => $cortissime,
-    ]);
+  ]);
 
 
-});
+})->name('home');
+
+
+Route::get('/prodotti', function () {
+  return view('prodotti');
+  
+})->name('prodotti');
+
+
+Route::get('/news', function () {
+  return view('news');
+  
+})->name('news');

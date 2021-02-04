@@ -11,9 +11,9 @@
   <header>
     <img src="{{asset("img/marchio-sito-test.png")}}" alt="">
     <ul>
-      <li class="active"><a href="#">home</a></li>
-      <li><a href="#">prodotti</a></li>
-      <li><a href="#">news</a></li>
+      <li class="active"><a href="{{route('home')}}">home</a></li>
+      <li><a href="{{route('prodotti')}}">prodotti</a></li>
+      <li><a href="{{route('news')}}">news</a></li>
     </ul>
   </header>
 
